@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+D:\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+833707683.index
+1185000778.index
+1464430825.index
+3103874275.index
+1122758845.index
+3057833650.index
+909144919.index
+1830419411.index

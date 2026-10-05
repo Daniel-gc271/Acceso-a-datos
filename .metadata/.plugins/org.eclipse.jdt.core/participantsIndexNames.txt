@@ -1,0 +1,7 @@
+INDEX VERSION 1.134
+D:\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4000104122.index
+\ejemplo-web-app1\src\main\java
+D:\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2224317581.index
+\webapp-example\src\main\java
+D:\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2938577294.index
+\prueba-webapp\src\main\resources
