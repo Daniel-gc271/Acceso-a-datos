@@ -146,3 +146,7 @@
 0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:16:27 +0200] "GET /webapp-example/Ej5-post.html HTTP/1.1" 200 4277
 0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:16:27 +0200] "GET /webapp-example/estilos.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:16:29 +0200] "POST /webapp-example/Ejer2Personas HTTP/1.1" 500 1309
+127.0.0.1 - - [05/Oct/2026:13:40:25 +0200] "GET / HTTP/1.1" 404 688
+0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:40:29 +0200] "GET /webapp-example/Ej5-post.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:40:29 +0200] "GET /webapp-example/estilos.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/Oct/2026:13:40:31 +0200] "POST /webapp-example/Ejer2Personas HTTP/1.1" 500 1309
