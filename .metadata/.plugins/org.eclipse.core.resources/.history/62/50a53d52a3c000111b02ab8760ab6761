@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "Ej5Post_ejemplo">
+	<fieldset>
+		<legend>Datos personales</legend>
+		
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre">
+		
+	</fieldset>
+
+	<button type="submit">Enviar datos</button>
+	<button type="submit">Enviar datos</button>
+</form>
+
+</body>
+</html>

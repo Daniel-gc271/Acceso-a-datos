@@ -1,0 +1,69 @@
+
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+/**
+ * Servlet implementation class Ejer2Personas
+ */
+@WebServlet("/Ejer2Personas")
+public class Ejer2Personas extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ejer2Personas() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+	ArrayList<Persona> lstPersonas= new ArrayList();
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String nombre= request.getParameter("nombre"),
+			   apellido1 = request.getParameter("ap1"),
+			   apellido2 = request.getParameter("ap2"),
+			   contacto = request.getParameter("cont");
+		int edad = Integer.parseInt(request.getParameter("edad"));
+		lstPersonas.add(new Persona(nombre, apellido1, apellido2, contacto, edad));
+		for (int i = 0; i < lstPersonas.length; i++) {
+			
+		}
+		
+		
+	}
+private class Persona {
+	private final String nombre, apellido1,apellido2,contacto;
+	private final int edad;
+	
+	
+	public Persona(String nombre, String apellido1, String apellido2, String contacto, int edad) {
+		super();
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.contacto = contacto;
+		this.edad = edad;
+	}
+	
+	
+}
+}

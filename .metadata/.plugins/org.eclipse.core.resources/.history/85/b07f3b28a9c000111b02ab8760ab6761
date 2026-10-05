@@ -1,0 +1,109 @@
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class Ej5Post_ejemplo
+ */
+@WebServlet("/Ej5Post_ejemplo")
+public class Ej5Post_ejemplo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Ej5Post_ejemplo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		response.setContentType("text/html");
+		try (PrintWriter responseWriter = response.getWriter()) {
+
+			// Recogemos los datos usando el atributo "name" del formulario HTML
+			String nombre = request.getParameter("nombre");
+			String apellido1 = request.getParameter("apellido1");
+			String email = request.getParameter("email");
+			String telefono = request.getParameter("telefono");
+			
+			// Construimos la respuesta que se mostrará en el navegador
+			responseWriter.append("<h2>Datos recibidos correctamente:</h2>");
+			responseWriter.append("<p><strong>Nombre completo:</strong> " + nombre + " " + apellido1 + "</p>");
+			responseWriter.append("<p><strong>Correo electrónico:</strong> " + email + "</p>");
+			responseWriter.append("<p><strong>Teléfono:</strong> " + telefono + "</p>");
+			
+		}
+	}
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		// Añadimos charset=UTF-8 para que se vean bien las tildes en el navegador
+		response.setContentType("text/html;charset=UTF-8");
+		
+		try (PrintWriter responseWriter = response.getWriter()) {
+			// Recogemos los parámetros de la URL / Formulario GET
+			String saludoOriginal = request.getParameter("saludo");
+			String idioma = request.getParameter("idioma");
+			
+			responseWriter.append("<h2>Procesando Saludo por GET:</h2>");
+			
+			// Si no nos han enviado un saludo, le asignamos uno por defecto
+			if (saludoOriginal == null || saludoOriginal.trim().isEmpty()) {
+				saludoOriginal = "Hola";
+			}
+			responseWriter.append("<p><strong>Saludo original:</strong> " + saludoOriginal + "</p>"); 
+			
+			// Evaluamos el idioma si no es nulo
+			String saludoTraducido = "";
+			if (idioma != null) {
+				// Convertimos a minúsculas para que acepte "ES", "Es" o "es" por igual
+				switch (idioma.toLowerCase().trim()) {
+					case "es":
+					case "español":
+						saludoTraducido = "¡Hola!";
+						break;
+					case "en":
+					case "ingles":
+						saludoTraducido = "Hello!";
+						break;
+					case "fr":
+					case "frances":
+						saludoTraducido = "Bonjour!";
+						break;
+					case "de":
+					case "aleman":
+						saludoTraducido = "Hallo!";
+						break;
+					case "it":
+					case "italiano":
+						saludoTraducido = "Ciao!";
+						break;
+					default:
+						saludoTraducido = "El idioma no está en nuestra base de datos";
+						break;
+				}
+			} else {
+				saludoTraducido = "No se ha especificado ningún idioma.";
+			}
+			
+			responseWriter.append("<p><strong>Saludo traducido:</strong> " + saludoTraducido + "</p>"); 
+		}
+	}
+
+}

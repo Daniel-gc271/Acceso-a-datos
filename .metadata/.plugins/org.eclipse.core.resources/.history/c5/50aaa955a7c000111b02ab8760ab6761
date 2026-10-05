@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<form action="Ej5Post_ejemplo" method="post">
+		<fieldset>
+			<legend>Datos personales</legend>
+
+			<!-- Nombre -->
+			<p>
+				<label for="nombre">Nombre:</label> <input type="text" name="nombre"
+					id="nombre" required>
+			</p>
+
+			<!-- Apellidos -->
+			<p>
+				<label for="apellido1">Primer apellido:</label> <input type="text"
+					name="apellido1" id="apellido1" required>
+			</p>
+			<p>
+				<label for="apellido2">Segundo apellido:</label> <input type="text"
+					name="apellido2" id="apellido2">
+			</p>
+
+			<!-- DNI / NIE -->
+			<p>
+				<label for="dni">DNI / NIE:</label> <input type="text" name="dni"
+					id="dni" placeholder="12345678X">
+			</p>
+
+			<!-- Fecha de nacimiento -->
+			<p>
+				<label for="nacimiento">Fecha de nacimiento:</label> <input
+					type="date" name="nacimiento" id="nacimiento">
+			</p>
+
+			<!-- Correo electrónico -->
+			<p>
+				<label for="email">Correo electrónico:</label> <input type="email"
+					name="email" id="email" placeholder="ejemplo@correo.com">
+			</p>
+
+			<!-- Número de teléfono -->
+			<p>
+				<label for="telefono">Número de teléfono:</label> <input type="tel"
+					name="telefono" id="telefono" placeholder="600123456">
+			</p>
+
+		</fieldset>
+
+		<!-- Botones de acción -->
+		<button type="submit">Enviar datos</button>
+		<button type="reset">Borrar formulario</button>
+	</form>
+	
+<fieldset>
+			<legend>Datos personales</legend>
+	<form action="Ej5Post_ejemplo" method="get" class="form-get-saludo">
+		<!-- Variable oculta: name es el nombre de la variable, value es su valor -->
+		<input type="hidden" name="saludo" value="hola">
+
+		<button type="submit" class="btn-saludo">Enviar Saludo</button>
+	</form>
+</fieldset>
+</body>
+</html>
