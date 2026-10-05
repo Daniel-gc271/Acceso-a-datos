@@ -35,7 +35,7 @@ public class Ejem6Contexto extends HttpServlet {
 		try (PrintWriter responseWriter = response.getWriter(); ) {
 			
 			responseWriter.append("Contexto: "+ getServletContext().getInitParameter("prueba"));
-			getServletContext().setAttribute("atribContext", "Atributo en ejecucion");
+			
 		}
 		//getServletContext().getInitParameter("prueba");
 		//otra forma de recoger el contexto
