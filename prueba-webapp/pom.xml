@@ -1,36 +1,48 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://apache.org" xmlns:xsi="http://w3.org"
+  xsi:schemaLocation="http://apache.org http://apache.org">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>gregoriofer.local</groupId>
   <artifactId>prueba-webapp</artifactId>
-  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
   <name>prueba-webapp Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <url>http://example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Configuración para usar Java 18 y eliminar el conflicto de compilación con JRE 22 -->
+    <maven.compiler.source>18</maven.compiler.source>
+    <maven.compiler.target>18</maven.compiler.target>
+  </properties>
+
   <dependencies>
-    <!-- API de Servlet 6.0 (Provisto por Tomcat 11 en tiempo de ejecución) -->
+    <!-- API de Servlet 6.1.0 (Provisto por Tomcat 11 en tiempo de ejecución) -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.0.0</version>
+      <version>6.1.0</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- API de JSTL 3.0 -->
+    <!-- API de JSTL 3.0.0 para solucionar errores de librerías de etiquetas en index.jsp -->
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
       <version>3.0.0</version>
     </dependency>
 
-    <!-- Implementación de JSTL 3.0 (GlassFish) -->
+    <!-- Implementación de JSTL 3.0.1 (GlassFish) -->
     <dependency>
       <groupId>org.glassfish.web</groupId>
       <artifactId>jakarta.servlet.jsp.jstl</artifactId>
       <version>3.0.1</version>
     </dependency>
-    
-    <!-- Librería de pruebas unitarias (Actualizado a JUnit 4.13.2) -->
+
+    <!-- Librería de pruebas unitarias JUnit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -38,9 +50,40 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
   <build>
     <finalName>prueba-webapp</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
-  
 </project>

@@ -139,3 +139,129 @@ button.btn-unico {
     width: 100%;
     margin-top: 15px;
 }
+
+/* Contenedor principal de la tabla */
+.contenedor-tabla {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 800px; /* Más ancho para que la tabla respire */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+/* Títulos en las zonas de visualización */
+.contenedor-tabla h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 10px;
+}
+
+/* Diseño de la tabla */
+table {
+    width: 100%;
+    border-collapse: separate; /* Permite bordes redondeados limpios */
+    border-spacing: 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden; /* Corta las esquinas del borde para que queden redondeadas */
+    border: 1px solid #e0e0e0;
+}
+
+/* Encabezados de la tabla */
+th {
+    background-color: #34495e; /* Gris oscuro elegante */
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 0.95em;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+/* Filas alternas (Efecto cebra para facilitar la lectura) */
+tr:nth-child(even) td {
+    background-color: #f9fbfb;
+}
+
+/* Efecto hover al pasar el ratón por encima de una fila */
+tr:hover td {
+    background-color: #eef7f2; /* Tono verde muy sutil */
+    color: #27ae60;
+}
+
+/* Eliminar el borde inferior de la última fila */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Mensaje de lista vacía */
+.lista-vacia {
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9fbfb;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+}
+
+/* Enlaces de navegación inferiores */
+.enlaces-retorno {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.enlaces-retorno a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.2s ease;
+}
+
+.enlaces-retorno a:hover {
+    color: #1b4f72;
+    text-decoration: underline;
+}
+
+/* Ajustes adicionales para que el formulario de "Mostrar tabla" 
+   se alinee estéticamente debajo del principal */
+form.form-secundario {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    max-width: 500px;
+    margin-top: -10px; /* Lo acerca al fieldset de arriba */
+}
+
+/* Botón único para ver la tabla a ancho completo */
+.btn-ver-lista {
+    background-color: #3498db;
+    color: white;
+    width: 100%;
+    margin-right: 0;
+}
+
+.btn-ver-lista:hover {
+    background-color: #2980b9;
+}

@@ -107,21 +107,18 @@
 			<!-- Añadimos una clase al botón único para que se expanda correctamente -->
 			<button type="submit" class="btn-unico">Saludar por POST</button>
 		</form>
+	
 
 
-
-		<fieldset>
+		
 			<legend>Datos lista persona</legend>
+
+			<!-- Formulario 1: Registra una nueva persona -->
 			<form action="Ejer2Personas" method="post">
-
-
-				<!-- Nombre -->
 				<p>
 					<label for="nombre">Nombre:</label> <input type="text"
 						name="nombre" id="nombre" required>
 				</p>
-
-				<!-- Apellidos -->
 				<p>
 					<label for="apellido1">Primer apellido:</label> <input type="text"
 						name="ap1" id="apellido1" required>
@@ -130,7 +127,6 @@
 					<label for="apellido2">Segundo apellido:</label> <input type="text"
 						name="ap2" id="apellido2">
 				</p>
-
 				<p>
 					<label for="email">Correo electrónico:</label> <input type="email"
 						name="cont" id="email" placeholder="ejemplo@correo.com">
@@ -140,13 +136,18 @@
 						max="120" name="edad" id="age" placeholder="68">
 				</p>
 				<button type="submit">Persona a la lista</button>
-				<button type="reset">Borrar persona</button>
-			</form>
-			<form action="Ejer2Personas" method="post">
-				<input type="hidden" name="exec" value ="1">
-				<button type="submit">Persona a la lista</button>
+				<button type="reset">Borrar formulario</button>
 			</form>
 
+			<br>
+
+			<!-- Formulario 2: Muestra la tabla con la lista guardada -->
+			<form action="Ejer2Personas" method="post" class="form-secundario">
+				<input type="hidden" name="exec" value="1">
+				<button type="submit" class="btn-ver-lista">
+				Mostrar lista en tabla HTML
+				</button>
+			</form>
 		</fieldset>
 </body>
 </html>

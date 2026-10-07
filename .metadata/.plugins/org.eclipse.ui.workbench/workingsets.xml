@@ -3,10 +3,22 @@
 <workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1789558820005_0" label="Java Main Sources" name="Java Main Sources"/>
 <workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1789558820022_1" label="Java Test Sources" name="Java Test Sources"/>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791192878394_3" label="Primera evaluacion" name="Primera evaluacion">
-<item elementID="=webapp-example" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=prueba-webapp" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Servers" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791368342139_4" label="Primera-eva-acceso-datos" name="Primera-eva-acceso-datos">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Servers" type="4"/>
+<item elementID="=prueba-webapp" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=webapp-example" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ejemplo-web-app1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791368396587_5" label="correccion-acceso-datos-primera-evaluacion" name="correccion-acceso-datos-primera-evaluacion">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Servers" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Ejercicio4" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1789558823529_2" label="Window Working Set" name="Aggregate for window 1789558823529"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791368514330_7" label="Multiple Working Sets" name="Aggregate:correccion-acceso-datos-primera-evaluacion:Primera-eva-acceso-datos:">
+<workingSet IMemento.internal.id="correccion-acceso-datos-primera-evaluacion"/>
+<workingSet IMemento.internal.id="Primera-eva-acceso-datos"/>
+</workingSet>
+<mruList name="correccion-acceso-datos-primera-evaluacion"/>
 </workingSetManager>

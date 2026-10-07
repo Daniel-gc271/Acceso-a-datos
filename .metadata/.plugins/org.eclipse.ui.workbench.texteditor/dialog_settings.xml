@@ -3,6 +3,8 @@
 	<section name="java.lang.Class">
 		<item key="selection" value="protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {"/>
 		<list key="findhistory">
+			<item value="hidden"/>
+			<item value="class"/>
 			<item value="protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {"/>
 		</list>
 	</section>
