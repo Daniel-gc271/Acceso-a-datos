@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="workingset_selection_history">
+		<item value="Primera-eva-acceso-datos"/>
+	</list>
 	<section name="WorkbenchPreferenceDialog.dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="189"/>
-		<item key="DIALOG_Y_ORIGIN" value="8"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
 		<item key="DIALOG_WIDTH" value="756"/>
 		<item key="DIALOG_HEIGHT" value="720"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
@@ -19,6 +22,20 @@
 			<item key="DIALOG_WIDTH" value="525"/>
 			<item key="DIALOG_HEIGHT" value="500"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.e4.ui.importer.wizard"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
+			<item value="org.eclipse.buildship.ui.importwizards"/>
+			<item value="org.eclipse.m2e"/>
+			<item value="org.eclipse.oomph.importWizards"/>
+			<item value="org.eclipse.pde.ui.PluginDevelopment"/>
+			<item value="org.eclipse.team.ui.importWizards"/>
+		</list>
+		<section name="ImportExportWizard.dialogBounds">
 		</section>
 	</section>
 </section>

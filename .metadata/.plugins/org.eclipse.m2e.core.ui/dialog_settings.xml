@@ -26,15 +26,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="gregoriofer.local.webapp_example"/>
-			<item value="gregoriofer.local.prueba_webapp"/>
 		</list>
 		<list key="groupId">
-			<item value="gregoriofer.local"/>
 		</list>
 		<list key="artifactId">
-			<item value="webapp-example"/>
-			<item value="prueba-webapp"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -137,7 +137,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       
-      <Context docBase="webapp-example" path="/webapp-example" reloadable="true" source="org.eclipse.jst.jee.server:webapp-example"/></Host>
+      <Context docBase="EjemploCookiesSesiones" path="/EjemploCookiesSesiones" reloadable="true" source="org.eclipse.jst.jee.server:EjemploCookiesSesiones"/></Host>
     </Engine>
   </Service>
 </Server>
