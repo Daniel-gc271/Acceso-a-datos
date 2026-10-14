@@ -7,9 +7,6 @@
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791368342139_4" label="Primera-eva-acceso-datos" name="Primera-eva-acceso-datos">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Servers" type="4"/>
-<item elementID="=prueba-webapp" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=webapp-example" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=ejemplo-web-app1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EjemploCookiesSesiones" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1791368396587_5" label="correccion-acceso-datos-primera-evaluacion" name="correccion-acceso-datos-primera-evaluacion">

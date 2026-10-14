@@ -42,7 +42,7 @@ public class CookiesLadoServidor extends HttpServlet {
 		try (PrintWriter responseWriter = response.getWriter()){
 			Object atributoCounter = sesion.getAttribute("counter");
 			//Comprobar si existe el atributo en la sesion
-			responseWriter.append(atributoCounter==null?"Bienvenido a dam":"Bienvenido de nuevo");
+			responseWriter.append(atributoCounter==null?"Bienvenido a dam\n":"Bienvenido de nuevo\n");
 			int counter= atributoCounter ==null?1:(int) atributoCounter;
 			//Incrementar el valor
 			sesion.setAttribute("counter", ++counter);

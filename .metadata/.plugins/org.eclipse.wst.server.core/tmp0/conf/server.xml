@@ -61,7 +61,7 @@
          AJP  Connector: /docs/config/ajp.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8083" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -136,8 +136,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      
-      <Context docBase="D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\EjemploCookiesSesiones" path="/EjemploCookiesSesiones" reloadable="true" source="org.eclipse.jst.jee.server:EjemploCookiesSesiones"/></Host>
+      <Context docBase="C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\EjemploCookiesSesiones" path="/EjemploCookiesSesiones" reloadable="true" source="org.eclipse.jst.jee.server:EjemploCookiesSesiones"/></Host>
     </Engine>
   </Service>
 </Server>
