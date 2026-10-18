@@ -11,17 +11,17 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 /**
- * Servlet implementation class Ejercicio3SesionesYCookies
+ * Servlet implementation class Ejercicio3Actividad6SesionesYCookies
  */
-@WebServlet("/Ejercicio3SesionesYCookies")
+@WebServlet("/Ejercicio3Actividad6SesionesYCookies")
 
-public class Ejercicio3SesionesYCookies extends HttpServlet {
+public class Ejercicio3Actividad6SesionesYCookies extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ejercicio3SesionesYCookies() {
+    public Ejercicio3Actividad6SesionesYCookies() {
         super();
         // TODO Auto-generated constructor stub
     }
