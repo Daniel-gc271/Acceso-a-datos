@@ -26,10 +26,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="gregoriofer.local.EjemploCookiesSesiones"/>
 		</list>
 		<list key="groupId">
+			<item value="gregoriofer.local"/>
 		</list>
 		<list key="artifactId">
+			<item value="EjemploCookiesSesiones"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
