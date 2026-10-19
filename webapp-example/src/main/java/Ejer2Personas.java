@@ -1,3 +1,5 @@
+
+
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,9 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-/**
- * Servlet implementation class Ejer2Personas
- */
 @WebServlet("/Ejer2Personas")
 public class Ejer2Personas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,32 +18,34 @@ public class Ejer2Personas extends HttpServlet {
         super();
     }
 
+    // Redirige al mismo flujo para poder pintar el formulario inicial si entran por URL
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
-
-	// ❌ SE ELIMINÓ LA DECLARACIÓN DE AQUÍ PARA EVITAR DUPLICADOS Y ERRORES DE COMPILACIÓN
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        
-        // 1. Obtener la lista compartida en el contexto de la aplicación
+        // 1. Inicializar el contexto y la lista global
         ServletContext contexto = getServletContext();
-        ArrayList<Persona> lstPersonas = (ArrayList<Persona>) contexto.getAttribute("listaGlobalPersonas");
+        @SuppressWarnings("unchecked")
+        ArrayList<Persona2> lstPersonas = (ArrayList<Persona2>) contexto.getAttribute("listaGlobalPersonas");
         if (lstPersonas == null) {
             lstPersonas = new ArrayList<>();
             contexto.setAttribute("listaGlobalPersonas", lstPersonas);
         }
 
-        // 2. CASO A: Se pulsó el segundo botón (exec = 1) -> Mostrar la tabla
         response.setContentType("text/html;charset=UTF-8");
-        if (request.getParameter("exec") != null) {
+        String accion = request.getParameter("accion");
+
+        // =========================================================================
+        // ESTADO 1: Mostrar la tabla de resultados (accion = "ver")
+        // =========================================================================
+        if ("ver".equals(accion)) {
         	try (PrintWriter responseWriter = response.getWriter()) {
         	    responseWriter.append("<!DOCTYPE html><html><head><title>Tabla de Personas</title>")
-        	                  .append("<link rel='stylesheet' type='text/css' href='estilos.css'>")
-        	                  .append("</head><body>");
-        	    
-        	    responseWriter.append("<div class='contenedor-tabla'>")
+        	                  .append("<link rel='stylesheet' type='text/css' href='css/estilos.css'>")
+        	                  .append("</head><body>")
+        	                  .append("<div class='contenedor-tabla'>")
         	                  .append("<h2>Listado Completo de Personas</h2>");
 
         	    if (lstPersonas.isEmpty()) {
@@ -52,73 +53,98 @@ public class Ejer2Personas extends HttpServlet {
         	    } else {
         	        responseWriter.append("<table>")
         	                      .append("<thead><tr>")
-        	                      .append("<th>Nombre</th>")
-        	                      .append("<th>Primer apellido</th>")
-        	                      .append("<th>Segundo apellido</th>")
-        	                      .append("<th>Contacto</th>")
-        	                      .append("<th>Edad</th>")
+        	                      .append("<th>Nombre</th><th>Primer apellido</th><th>Segundo apellido</th><th>Contacto</th><th>Edad</th>")
         	                      .append("</tr></thead>")
         	                      .append("<tbody>");
         	        
-        	        for (Persona p : lstPersonas) {
+        	        for (Persona2 p : lstPersonas) {
         	            responseWriter.append("<tr>")
-        	                          .append("<td>").append(p.getNombre()).append("</td>")
-        	                          .append("<td>").append(p.getApellido1()).append("</td>")
-        	                          .append("<td>").append(p.getApellido2()).append("</td>")
-        	                          .append("<td>").append(p.getContacto()).append("</td>")
-        	                          .append("<td>").append(String.valueOf(p.getEdad())).append("</td>")
+        	                          .append("<td>").append(p.nombre()).append("</td>")
+        	                          .append("<td>").append(p.apellido1()).append("</td>")
+        	                          .append("<td>").append(p.apellido2()).append("</td>")
+        	                          .append("<td>").append(p.contacto()).append("</td>")
+        	                          .append("<td>").append(String.valueOf(p.edad())).append("</td>")
         	                          .append("</tr>");
         	        }
         	        responseWriter.append("</tbody></table>");
         	    }
         	    
         	    responseWriter.append("<div class='enlaces-retorno'>")
-        	                  .append("<a href='javascript:history.back()'>← Volver al Formulario</a>")
-        	                  .append("</div>");
-        	    
-        	    responseWriter.append("</div>") // Fin contenedor-tabla
-        	                  .append("</body></html>");
+        	                  .append("<a href='Ejer2Personas'>← Volver al Formulario</a>")
+        	                  .append("</div></div></body></html>");
         	}           
         	return; 
         }
 
-        // 3. CASO B: Se pulsó "Persona a la lista" -> Recoger parámetros y almacenar
-        String nombre = request.getParameter("nombre");
-        String apellido1 = request.getParameter("ap1");
-        String apellido2 = request.getParameter("ap2");
-        String contacto = request.getParameter("cont");
-        
-        int edad = 0;
-        if (request.getParameter("edad") != null && !request.getParameter("edad").isEmpty()) {
-            edad = Integer.parseInt(request.getParameter("edad"));
-        }
-        
-        if (nombre != null && !nombre.trim().isEmpty() &&
+        // =========================================================================
+        // ESTADO 2: Procesar la inserción de una persona (accion = "guardar")
+        // =========================================================================
+        if ("guardar".equals(accion)) {
+            String nombre = request.getParameter("nombre");
+            String apellido1 = request.getParameter("ap1");
+            String apellido2 = request.getParameter("ap2");
+            String contacto = request.getParameter("cont");
+            
+            int edad = 0;
+            if (request.getParameter("edad") != null && !request.getParameter("edad").isEmpty()) {
+                edad = Integer.parseInt(request.getParameter("edad"));
+            }
+            
+            if (nombre != null && !nombre.trim().isEmpty() &&
         	    apellido1 != null && !apellido1.trim().isEmpty() &&
         	    contacto != null && !contacto.trim().isEmpty()) {
         	    
-        	    lstPersonas.add(new Persona(nombre, apellido1, apellido2, contacto, edad));
-        	    System.out.println("Persona agregada correctamente en consola.");
+        	    lstPersonas.add(new Persona2(nombre, apellido1, apellido2, contacto, edad));
+        	    
+                // Mostramos mensaje de éxito controlado
+                try (PrintWriter responseWriter = response.getWriter()) {
+                    responseWriter.println("<!DOCTYPE html><html><head><title>Éxito</title>");
+                    responseWriter.println("<link rel='stylesheet' type='text/css' href='css/estilos.css'>");
+                    responseWriter.println("</head><body>");
+                    responseWriter.println("<div class='contenedor-tabla' style='max-width:500px; text-align:center;'>");
+                    responseWriter.println("<h3 style='color:#2ecc71;'>¡Persona agregada correctamente!</h3>");
+                    responseWriter.println("<p>Se ha guardado en la lista interna global.</p>");
+                    responseWriter.println("<div class='enlaces-retorno' style='justify-content:center;'>");
+                    responseWriter.println("<a href='Ejer2Personas'>Volver al formulario</a>");
+                    responseWriter.println("</div></div></body></html>");
+                }
         	} else {
-        	    System.out.println("Error: Faltan campos obligatorios.");
-        	}
-
-        // Respuesta al agregar
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter responseWriter = response.getWriter()) {
-            responseWriter.println("<!DOCTYPE html><html><head><title>Éxito</title>");
-            responseWriter.println("<link rel='stylesheet' type='text/css' href='css/estilos.css'>");
-            responseWriter.println("</head><body>");
-            responseWriter.println("<div class='contenedor-tabla' style='max-width:500px; text-align:center;'>");
-            responseWriter.println("<h3 style='color:#2ecc71;'>¡Persona agregada correctamente!</h3>");
-            responseWriter.println("<p>Se ha guardado en la lista interna global.</p>");
-            responseWriter.println("<div class='enlaces-retorno' style='justify-content:center;'>");
-            responseWriter.println("<a href='javascript:history.back()'>Volver atrás</a>");
-            responseWriter.println("</div>");
-            responseWriter.println("</div>");
-            responseWriter.println("</body></html>");
+                // Si falla la validación, volvemos a mostrar el formulario con aviso
+                try (PrintWriter responseWriter = response.getWriter()) {
+                    responseWriter.println("<script>alert('Error: Faltan campos obligatorios.'); window.location='Ejer2Personas';</script>");
+                }
+            }
+            return;
         }
-    }
+
+        // =========================================================================
+        // ESTADO 3: Entrada inicial por URL o reset (Muestra el formulario integrado)
+        // =========================================================================
+        try (PrintWriter responseWriter = response.getWriter()) {
+            responseWriter.append("<!DOCTYPE html><html><head><title>Registro</title>")
+                          .append("<link rel='stylesheet' type='text/css' href='css/estilos.css'></head><body>")
+                          .append("<div class='contenedor-tabla' style='max-width: 500px;'>")
+                          .append("<h2>Añadir Nueva Persona</h2>")
+                          
+                          // Formulario de inserción
+                          .append("<form action='Ejer2Personas' method='post'>")
+                          .append("<input type='hidden' name='accion' value='guardar'>")
+                          .append("<label>Nombre:</label><br><input type='text' name='nombre' required><br><br>")
+                          .append("<label>Primer Apellido:</label><br><input type='text' name='ap1' required><br><br>")
+                          .append("<label>Segundo Apellido:</label><br><input type='text' name='ap2'><br><br>")
+                          .append("<label>Contacto (Email/Tlf):</label><br><input type='text' name='cont' required><br><br>")
+                          .append("<label>Edad:</label><br><input type='number' name='edad' min='0'><br><br>")
+                          .append("<button type='submit'>Persona a la lista</button></form>")
+                          
+                          .append("<hr style='margin: 20px 0; border: 0; border-top: 1px solid #ccc;'>")
+                          
+                          // Formulario para ver tabla
+                          .append("<form action='Ejer2Personas' method='post'>")
+                          .append("<input type='hidden' name='accion' value='ver'>")
+                          .append("<button type='submit' style='background-color: #34495e;'>Ver Listado de Personas</button></form>")
+                          .append("</div></body></html>");
+        }
+	}
 
     private static class Persona {
         private final String nombre, apellido1, apellido2, contacto;
@@ -137,11 +163,6 @@ public class Ejer2Personas extends HttpServlet {
         public String getApellido2() { return apellido2; }
         public String getContacto() { return contacto; }
         public int getEdad() { return edad; }
-
-        @Override
-        public String toString() {
-            return "Persona [Nombre: " + nombre + " " + apellido1 + " " + apellido2 + 
-                   ", Contacto: " + contacto + ", Edad: " + edad + "]";
-        }
     }
+    private static record Persona2(String nombre, String apellido1, String apellido2, String contacto, int edad) {}
 }
