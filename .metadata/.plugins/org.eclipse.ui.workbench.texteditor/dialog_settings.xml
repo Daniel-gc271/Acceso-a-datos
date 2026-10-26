@@ -2,7 +2,11 @@
 <section name="Workbench">
 	<section name="java.lang.Class">
 		<item key="selection" value="&lt;form action=&quot;Ejer2Personas&quot; method=&quot;post&quot;&gt;"/>
+		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="Persona"/>
+			<item value="edad"/>
+			<item value="ESTILOS"/>
 			<item value="ejemplo8"/>
 			<item value="webapp"/>
 			<item value="&lt;form action=&quot;Ejer2Personas&quot; method=&quot;post&quot;&gt;"/>

@@ -26,6 +26,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="gregoriofer.local.Correciones"/>
 			<item value="gregoriofer.local.CorreccionEjer1Y2"/>
 			<item value="gregoriofer.local.EjemploCookiesSesiones"/>
 		</list>
@@ -33,6 +34,7 @@
 			<item value="gregoriofer.local"/>
 		</list>
 		<list key="artifactId">
+			<item value="Correciones"/>
 			<item value="CorreccionEjer1Y2"/>
 			<item value="EjemploCookiesSesiones"/>
 		</list>
