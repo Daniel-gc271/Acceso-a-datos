@@ -228,3 +228,43 @@
 2026-10-26 11:43:41.536: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-10-26 11:43:41.536: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-10-26 12:40:27.047: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 11:56:26.159: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 11:56:49.142: [INFO] CurrentProfilePath: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 11:56:49.142: [INFO] Profiles total count: 1
+2026-10-28 11:56:49.142: [INFO] Profile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 11:56:49.142: [INFO] LastUsedProfileDir: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 11:56:49.142: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 11:56:49.142: [INFO] OnDoneLoading sync enabled: 0
+2026-10-28 11:56:49.142: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-28 11:56:49.142: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-28 11:56:49.142: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 11:57:38.565: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 11:57:58.463: [INFO] CurrentProfilePath: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 11:57:58.463: [INFO] Profiles total count: 1
+2026-10-28 11:57:58.463: [INFO] Profile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 11:57:58.463: [INFO] LastUsedProfileDir: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 11:57:58.463: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 11:57:58.463: [INFO] OnDoneLoading sync enabled: 0
+2026-10-28 11:57:58.463: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-28 11:57:58.463: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-28 11:57:58.463: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 12:00:07.961: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 12:00:27.897: [INFO] CurrentProfilePath: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 12:00:27.897: [INFO] Profiles total count: 1
+2026-10-28 12:00:27.897: [INFO] Profile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 12:00:27.897: [INFO] LastUsedProfileDir: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 12:00:27.897: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 12:00:27.897: [INFO] OnDoneLoading sync enabled: 0
+2026-10-28 12:00:27.897: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-28 12:00:27.897: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-28 12:00:27.897: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 12:03:36.959: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-28 12:03:58.008: [INFO] CurrentProfilePath: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 12:03:58.008: [INFO] Profiles total count: 1
+2026-10-28 12:03:58.008: [INFO] Profile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 12:03:58.008: [INFO] LastUsedProfileDir: D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-28 12:03:58.008: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-19T10:31:00.836Z
+2026-10-28 12:03:58.008: [INFO] OnDoneLoading sync enabled: 0
+2026-10-28 12:03:58.008: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-28 12:03:58.008: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-28 12:03:58.008: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
