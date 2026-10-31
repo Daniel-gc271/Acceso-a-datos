@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\2DAM\acceso_datos\proyectos\Acceso a datos\Ejercicio4\src\main\webapp\WEB-INF\web.xml"/>
 			<item value="D:\2DAM\acceso_datos\proyectos\prueba-webapp"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,10 +27,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="grgeoriofer.local.EjemploJSP"/>
 		</list>
 		<list key="groupId">
+			<item value="grgeoriofer.local"/>
 		</list>
 		<list key="artifactId">
+			<item value="EjemploJSP"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

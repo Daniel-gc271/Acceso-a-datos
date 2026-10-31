@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 2026/10/31-13:45:21.999 ce4 Reusing MANIFEST C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
 2026/10/31-13:45:22.000 ce4 Recovering log #3
 2026/10/31-13:45:22.003 ce4 Reusing old log C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 
+=======
+2026/10/28-13:03:58.082 5f20 Reusing MANIFEST D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2026/10/28-13:03:58.084 5f20 Recovering log #3
+2026/10/28-13:03:58.086 5f20 Reusing old log D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 
+>>>>>>> origin/main

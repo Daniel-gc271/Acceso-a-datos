@@ -1,5 +1,3 @@
 INDEX VERSION 1.134
-C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\456937459.index
-\EjemploCookiesSesiones\src\main\java
-C:\Users\Daniel González\Desktop\2DAM\acceso_datos\proyectos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2170707897.index
-\Ejercicio4\src\main\java
+D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3534308076.index
+\EjemploJSP\src\main\java

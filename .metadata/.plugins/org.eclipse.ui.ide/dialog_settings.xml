@@ -21,6 +21,7 @@
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_SKIP_DOT_FOLDERS" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\2DAM\acceso_datos\proyectos"/>
 			<item value="D:\2DAM\acceso_datos\proyectos\Acceso a datos"/>
 		</list>
 		<section name="SmartImportWizard.dialogBounds">
