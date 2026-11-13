@@ -27,12 +27,20 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="grgeoriofer.local.gestionIncidencias"/>
+			<item value="grgeoriofer.local.ActividadesJSP"/>
+			<item value="grgeoriofer.local.ExamenReto1"/>
+			<item value="grgeoriofer.local.Dispatcher"/>
 			<item value="grgeoriofer.local.EjemploJSP"/>
 		</list>
 		<list key="groupId">
 			<item value="grgeoriofer.local"/>
 		</list>
 		<list key="artifactId">
+			<item value="gestionIncidencias"/>
+			<item value="ActividadesJSP"/>
+			<item value="ExamenReto1"/>
+			<item value="Dispatcher"/>
 			<item value="EjemploJSP"/>
 		</list>
 		<list key="projectNameTemplate">
