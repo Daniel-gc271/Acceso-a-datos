@@ -1,0 +1,117 @@
+================================================================================
+DOCUMENTO DE HANDOVER - PROYECTO WEB JEE: MANEJO DE FICHEROS (2º DAM)
+Centro: Gregorio Fernández | Módulo: Acceso a Datos (UT2 - Reto Grupal)
+================================================================================
+
+1. OBJETIVO DEL PROYECTO
+--------------------------------------------------------------------------------
+Desarrollar una aplicación web en Java Enterprise Edition (JEE) con Maven que 
+permita la LECTURA y ESCRITURA de datos en cinco formatos de fichero distintos:
+- XLS / XLSX (Excel)
+- CSV (Valores separados por comas)
+- JSON
+- XML (Usando DOM o SAX; recomendado DOM para lectura y escritura)
+- RDF (Modelo semántico)
+
+Nota de alcance: Se omite el requisito de descarga de datasets abiertos sobre 
+ODS/huella de carbono; se trabajará con ficheros locales estructurados de 6 campos.
+
+
+2. ARQUITECTURA Y ESTRUCTURA DE DIRECTORIOS (MAVEN)
+--------------------------------------------------------------------------------
+El proyecto sigue el patrón Modelo-Vista-Controlador (MVC) adaptado a las vistas 
+solicitadas (HTML estático para entrada/error y JSP para salida dinámica):
+
+ProyectoFicheros/
+├── pom.xml
+└── src/
+    └── main/
+        ├── java/
+        │   ├── controlador/
+        │   │   └── ServletFich.java        <-- Controlador central
+        │   ├── modelo/
+        │   │   └── Registro.java           <-- POJO con los 6 atributos (dato1..dato6)
+        │   └── servicios/
+        │       ├── IGestorFicheros.java    <-- Interfaz común (leer / escribir)
+        │       ├── GestorXLS.java          <-- Especialista Excel
+        │       ├── GestorCSV.java          <-- Especialista CSV
+        │       ├── GestorJSON.java         <-- Especialista JSON
+        │       ├── GestorXML.java          <-- Especialista XML (DOM)
+        │       └── GestorRDF.java          <-- Especialista RDF
+        └── webapp/
+            ├── TratamientoFich.html        <-- Vista inicial (Formulario)
+            ├── Error.html                  <-- Vista de error
+            ├── AccesoDatosA.jsp            <-- Vista de resultados (Tabla dinámica)
+            └── ficheros/                   <-- Carpeta destino de los archivos
+
+
+3. DEPENDENCIAS MAVEN (pom.xml)
+--------------------------------------------------------------------------------
+Librerías seleccionadas para cubrir todos los formatos + API de Servlets:
+
+- RDF: Apache Jena (org.apache.jena : apache-jena-libs : 5.1.0 - type: pom)
+- XLS/XLSX: Apache POI (org.apache.poi : poi-ooxml : 5.3.0)
+- CSV: OpenCSV (com.opencsv : opencsv : 5.9)
+- JSON: Jackson Databind (com.fasterxml.jackson.core : jackson-databind : 2.18.1)
+- XML: Jackson XML (com.fasterxml.jackson.dataformat : jackson-dataformat-xml : 2.18.1) 
+  *Nota: Para cumplir estrictamente con DOM/SAX, usar la API nativa de Java 
+   javax.xml.parsers (DocumentBuilderFactory / DocumentBuilder).
+- Web JEE: javax.servlet-api (4.0.1) o jakarta.servlet-api (según versión Tomcat).
+
+
+4. FLUJO DE LA APLICACIÓN Y RESPONSABILIDADES
+--------------------------------------------------------------------------------
+[TratamientoFich.html] ---> [ServletFich.java] ---> [AccesoDatosA.jsp]
+                                    |
+                                    +-------------> [Error.html] (si hay fallo)
+
+A) VISTA INICIAL (TratamientoFich.html)
+   - Formulario HTML con method="POST" y action="ServletFich".
+   - Desplegable (<select>) para el formato: XLS, CSV, JSON, XML, RDF.
+   - Radio buttons (<input type="radio">) para la acción: Lectura / Escritura.
+   - 6 campos de texto (<input type="text">): DATO1 a DATO6.
+   - Validación: En modo Escritura, ningún campo puede quedar vacío.
+
+B) CONTROLADOR (ServletFich.java)
+   - Recoge parámetros mediante request.getParameter().
+   - Si la acción es "Escritura" y algún campo está vacío -> redirige a Error.html.
+   - Instancia el servicio correspondiente según el formato elegido.
+   - Caso LECTURA: Llama a gestor.leer(ruta), guarda List<Registro> en request
+     (request.setAttribute) y hace forward a AccesoDatosA.jsp.
+   - Caso ESCRITURA: Construye un objeto Registro, llama a gestor.escribir(ruta, reg)
+     y muestra/descarga el archivo actualizado o redirige a la vista de comprobación.
+   - Manejo de errores: Bloque try-catch global que captura excepciones y 
+     redirige a Error.html (pasando el mensaje de error si se desea mostrar).
+
+C) CAPA DE SERVICIOS (servicios/*.java)
+   - Encapsula exclusivamente la lógica de entrada/salida de cada formato.
+   - Contrato recomendado mediante interfaz IGestorFicheros:
+       * List<Registro> leer(String rutaArchivo) throws Exception;
+       * void escribir(String rutaArchivo, Registro nuevoRegistro) throws Exception;
+
+D) VISTA DE RESULTADOS (AccesoDatosA.jsp)
+   - Única vista JSP obligatoria.
+   - Recupera la List<Registro> enviada por el Servlet.
+   - Renderiza una tabla HTML (<table>) con encabezados y filas dinámicas (<tr>/<td>).
+
+E) VISTA DE ERROR (Error.html)
+   - Muestra aviso cuando falla la validación o ocurre una excepción de E/S.
+
+
+5. REPARTO DE TAREAS SUGERIDO PARA EL EQUIPO
+--------------------------------------------------------------------------------
+- Miembro 1: Estructura Maven, pom.xml, Modelo (Registro.java), Vistas HTML y JSP.
+- Miembro 2: Controlador (ServletFich.java) + GestorCSV + GestorJSON.
+- Miembro 3: GestorXLS (Apache POI) + GestorXML (DOM).
+- Miembro 4: GestorRDF (Apache Jena) + Pruebas de integración + Diagrama de Gantt.
+
+
+6. ESTADO ACTUAL Y PRÓXIMOS PASOS
+--------------------------------------------------------------------------------
+[x] Definición de dependencias Maven.
+[x] Diseño de arquitectura MVC y separación de responsabilidades.
+[ ] Creación del proyecto Maven y configuración de Tomcat.
+[ ] Implementación de vistas (TratamientoFich.html, AccesoDatosA.jsp, Error.html).
+[ ] Codificación del Servlet y los 5 gestores de ficheros.
+[ ] Subida a GitHub, elaboración de Diagrama de Gantt y entrega en Moodle.
+================================================================================
