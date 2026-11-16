@@ -1,3 +1,0 @@
-INDEX VERSION 1.134
-D:\2DAM\acceso_datos\proyectos\Acceso a datos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3534308076.index
-\EjemploJSP\src\main\java
